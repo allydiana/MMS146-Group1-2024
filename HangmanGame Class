@@ -1,2 +1,20 @@
-  def update_hangman(self):
-  def display_result(self):
+class Hangman:
+    def __init__(self, secret_word, max_attempts):
+        self.player_username = player_username #Public Attribute
+        self._our_categories = our_categories #Protected Attribute
+        self._secret_word = secret_word #Protected Attribute
+        self._guessed_letters = [] #Protected Attribute
+        self._incorrect_guesses = [] #Protected Attribute
+        self._max_attempts = max_attempts #Protected Attribute
+
+    def update_hangman(self):
+        display_word = ''.join([letter if letter in self.guessed_letters else '_' for letter in self.secret_word])
+        return display_word
+
+    def display_result(self):
+        if self._incorrect_guesses >= self.max_attempts:
+            return f"You lost! The word was '{self.secret_word}'."
+        elif all(letter in self.guessed_letters for letter in self.secret_word):
+            return "You guessed the word right!"
+        else:
+            return "Keep guessing!"
