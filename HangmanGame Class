@@ -13,8 +13,8 @@ class Hangman:
 
     def display_result(self):
         if self._incorrect_guesses >= self.max_attempts:
-            return f"You lost! The word was '{self.secret_word}'."
+            return f"We're sorry. You lose."
         elif all(letter in self.guessed_letters for letter in self.secret_word):
-            return "You guessed the word right!"
+            return "Congratulations! You won!"
         else:
-            return "Keep guessing!"
+            return "Incorrect."
