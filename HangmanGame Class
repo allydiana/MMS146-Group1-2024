@@ -1,10 +1,2 @@
-class Hangman:
-  def __init__(self, secret_word, guessed_letters, incorrect_guesses, max_attempts):
-    self.secret_word = secret_word
-    self.guessed_letters = []
-    self.incorrect_guesses = 0
-    self.max_attempts = max_attempts
-
-  def check_guess(self, guess):
   def update_hangman(self):
   def display_result(self):
